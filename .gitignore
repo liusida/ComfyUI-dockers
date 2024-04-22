@@ -1,6 +1,8 @@
 comfy-*/ComfyUI/
 comfy-*/*.log
 comfy-*/.*
+auth_data/
+auth_data/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

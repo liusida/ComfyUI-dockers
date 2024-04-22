@@ -1,15 +1,34 @@
+import os
 from aiohttp import web
 import asyncio
-import subprocess
+import bcrypt
 
-TOKEN = '9999'
+auth_data_path = 'auth_data'
+hashed_token_path = os.path.join(auth_data_path, 'hashed_token.txt')
+salt_path = os.path.join(auth_data_path, 'salt.txt')
+
+# Load the hashed token and salt from files
+with open(hashed_token_path, 'rb') as f:
+    hashed_token = f.read()
+
+with open(salt_path, 'rb') as f:
+    salt = f.read()
 
 # Token checking middleware
 @web.middleware
 async def token_check_middleware(request, handler):
-    token = request.query.get('token')  # Get token from query parameters
-    if token != TOKEN:
-        return web.json_response({'error': 'Unauthorized'}, status=401)
+    # Get the token from query parameters
+    token = request.query.get('token')
+    if token:
+        # Hash the incoming token with the same salt and compare
+        token_encoded = token.encode()
+        hashed_request_token = bcrypt.hashpw(token_encoded, salt)
+
+        if hashed_token != hashed_request_token:
+            return web.json_response({'error': 'Unauthorized'}, status=401)
+    else:
+        return web.json_response({'error': 'Token missing'}, status=400)
+    
     return await handler(request)
 
 # Run Docker Compose command asynchronously
