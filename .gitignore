@@ -1,4 +1,6 @@
-comfy-*/
+comfy-*/ComfyUI/
+comfy-*/*.log
+comfy-*/.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
