@@ -7,7 +7,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
     && apt-get install -y \
     git \
     libgl1-mesa-glx \
-    libglib2.0-0
+    libglib2.0-0 \
+    build-essential \
     
 RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
     && mkdir -p /home/runner /home/scripts \

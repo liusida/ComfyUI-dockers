@@ -79,3 +79,19 @@ services:
           devices:
             - capabilities: ["gpu"]
 
+  comfy-9:
+    image: sidaliu/comfyui:latest
+    ports:
+      - "56789:8188"
+    volumes:
+      - /mnt/data/ComfyUI-dockers/comfy-9:/home/runner
+      - /mnt/data/comfy-public:/comfy-public
+    environment:
+      - http_proxy=http://172.17.0.1:17890
+      - https_proxy=http://172.17.0.1:17890
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+
