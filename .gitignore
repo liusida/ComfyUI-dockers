@@ -1,3 +1,5 @@
+comfy-*/Datasets/
+comfy-*/huggingface/
 comfy-*/ComfyUI/
 comfy-*/*.log
 comfy-*/.*

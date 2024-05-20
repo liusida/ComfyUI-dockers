@@ -89,6 +89,7 @@ services:
     environment:
       - http_proxy=http://172.17.0.1:17890
       - https_proxy=http://172.17.0.1:17890
+      - CLI_ARGS=--enable-cors-header=http://heartai.cn
     deploy:
       resources:
         reservations:

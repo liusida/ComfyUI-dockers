@@ -44,4 +44,8 @@ export PYTHONPYCACHEPREFIX="/home/runner/.cache/pycache"
 
 cd /home/runner
 
-python3 ./ComfyUI/main.py --listen --port 8188 ${CLI_ARGS}
+while true; do
+    python3 ./ComfyUI/main.py --listen --port 8188 ${CLI_ARGS}
+    echo "main.py terminated with exit code $?. Respawning.." >&2
+    sleep 10
+done
