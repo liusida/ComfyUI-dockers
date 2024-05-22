@@ -28,4 +28,4 @@ VOLUME /home/runner
 WORKDIR /home/runner
 EXPOSE 8188
 ENV CLI_ARGS=""
-CMD ["bash","/home/scripts/entrypoint-comfy-cli.sh"]
+CMD ["bash","/home/scripts/entrypoint.sh"]
