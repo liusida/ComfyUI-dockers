@@ -1,14 +1,16 @@
 services:
   comfy-1:
-    image: sidaliu/comfyui:latest
+    image: sidaliu/comfyui:comfy-cli
     ports:
       - "56781:8188"
     volumes:
-      - /mnt/data/ComfyUI-dockers/comfy-1:/home/runner
-      - /mnt/data/comfy-public:/comfy-public
+      - ./comfy-1:/home/runner
+      - ./comfy-public:/comfy-public
     environment:
-      - http_proxy=http://172.17.0.1:17890
-      - https_proxy=http://172.17.0.1:17890
+      - http_proxy=http://host.docker.internal:17890
+      - https_proxy=http://host.docker.internal:17890
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       resources:
         reservations:
@@ -16,15 +18,17 @@ services:
             - capabilities: ["gpu"]
 
   comfy-2:
-    image: sidaliu/comfyui:latest
+    image: sidaliu/comfyui:comfy-cli
     ports:
       - "56782:8188"
     volumes:
-      - /mnt/data/ComfyUI-dockers/comfy-2:/home/runner
-      - /mnt/data/comfy-public:/comfy-public
+      - ./comfy-2:/home/runner
+      - ./comfy-public:/comfy-public
     environment:
-      - http_proxy=http://172.17.0.1:17890
-      - https_proxy=http://172.17.0.1:17890
+      - http_proxy=http://host.docker.internal:17890
+      - https_proxy=http://host.docker.internal:17890
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       resources:
         reservations:
@@ -32,15 +36,17 @@ services:
             - capabilities: ["gpu"]
 
   comfy-3:
-    image: sidaliu/comfyui:latest
+    image: sidaliu/comfyui:comfy-cli
     ports:
       - "56783:8188"
     volumes:
-      - /mnt/data/ComfyUI-dockers/comfy-3:/home/runner
-      - /mnt/data/comfy-public:/comfy-public
+      - ./comfy-3:/home/runner
+      - ./comfy-public:/comfy-public
     environment:
-      - http_proxy=http://172.17.0.1:17890
-      - https_proxy=http://172.17.0.1:17890
+      - http_proxy=http://host.docker.internal:17890
+      - https_proxy=http://host.docker.internal:17890
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       resources:
         reservations:
@@ -48,15 +54,17 @@ services:
             - capabilities: ["gpu"]
 
   comfy-4:
-    image: sidaliu/comfyui:latest
+    image: sidaliu/comfyui:comfy-cli
     ports:
       - "56784:8188"
     volumes:
-      - /mnt/data/ComfyUI-dockers/comfy-4:/home/runner
-      - /mnt/data/comfy-public:/comfy-public
+      - ./comfy-4:/home/runner
+      - ./comfy-public:/comfy-public
     environment:
-      - http_proxy=http://172.17.0.1:17890
-      - https_proxy=http://172.17.0.1:17890
+      - http_proxy=http://host.docker.internal:17890
+      - https_proxy=http://host.docker.internal:17890
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       resources:
         reservations:
@@ -64,35 +72,39 @@ services:
             - capabilities: ["gpu"]
 
   comfy-5:
-    image: sidaliu/comfyui:latest
+    image: sidaliu/comfyui:comfy-cli
     ports:
       - "56785:8188"
     volumes:
-      - /mnt/data/ComfyUI-dockers/comfy-5:/home/runner
-      - /mnt/data/comfy-public:/comfy-public
+      - ./comfy-5:/home/runner
+      - ./comfy-public:/comfy-public
     environment:
-      - http_proxy=http://172.17.0.1:17890
-      - https_proxy=http://172.17.0.1:17890
+      - http_proxy=http://host.docker.internal:17890
+      - https_proxy=http://host.docker.internal:17890
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       resources:
         reservations:
           devices:
             - capabilities: ["gpu"]
 
+
   comfy-9:
-    image: sidaliu/comfyui:latest
+    image: sidaliu/comfyui:comfy-cli
     ports:
       - "56789:8188"
     volumes:
-      - /mnt/data/ComfyUI-dockers/comfy-9:/home/runner
-      - /mnt/data/comfy-public:/comfy-public
+      - ./comfy-9:/home/runner
+      - ./comfy-public:/comfy-public
     environment:
-      - http_proxy=http://172.17.0.1:17890
-      - https_proxy=http://172.17.0.1:17890
+      - http_proxy=http://host.docker.internal:17890
+      - https_proxy=http://host.docker.internal:17890
       - CLI_ARGS=--enable-cors-header=http://heartai.cn
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       resources:
         reservations:
           devices:
             - capabilities: ["gpu"]
-

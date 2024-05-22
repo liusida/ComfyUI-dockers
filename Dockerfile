@@ -9,7 +9,12 @@ RUN --mount=type=cache,target=/var/cache/apt \
     libgl1-mesa-glx \
     libglib2.0-0 \
     build-essential
-    
+
+RUN --mount=type=cache,target=/var/cache/apt \
+    set -eu \
+    && apt-get install -y \
+    net-tools inetutils-ping curl
+
 RUN printf 'CREATE_MAIL_SPOOL=no' >> /etc/default/useradd \
     && mkdir -p /home/runner /home/scripts \
     && groupadd runner \
@@ -23,4 +28,4 @@ VOLUME /home/runner
 WORKDIR /home/runner
 EXPOSE 8188
 ENV CLI_ARGS=""
-CMD ["bash","/home/scripts/entrypoint.sh"]
+CMD ["bash","/home/scripts/entrypoint-comfy-cli.sh"]
