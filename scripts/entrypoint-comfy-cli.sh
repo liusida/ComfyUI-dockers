@@ -1,21 +1,28 @@
 #!/bin/bash
-export PATH=$PATH:/home/runner/.local/bin/
+# export PATH=$PATH:/home/runner/.local/bin/
 
-if [ ! -f "/home/runner/.local/bin/comfy-cli" ]; then
-    echo "entrypoint> pip install comfy-cli"
+cd /home/runner
+echo "entrypoint> Starting..."
+
+if [ ! -d "venv" ]; then
+    python -m venv --prompt=comfy venv
+    . venv/bin/activate
+    pip install --upgrade pip
+    echo "entrypoint> Installing comfy-cli in virtual environment..."
     pip install comfy-cli
+else
+    . venv/bin/activate
 fi
 
-if [ ! -d "/home/runner/ComfyUI" ]; then
-    echo "entrypoint> install ComfyUI"
-    comfy-cli --workspace=/home/runner/ComfyUI --skip-prompt install --nvidia
+if [ ! -d "ComfyUI" ]; then
+    echo "entrypoint> Install ComfyUI and node ComfyUI-Login, ComfyUI-Crystools..."
+    comfy-cli --workspace=./ComfyUI --skip-prompt install --nvidia
+    comfy-cli --workspace=./ComfyUI --skip-prompt node install ComfyUI-Login
+    comfy-cli --workspace=./ComfyUI --skip-prompt node install ComfyUI-Crystools
 fi
-
-comfy-cli --workspace=/home/runner/ComfyUI --skip-prompt node install ComfyUI-Login
-comfy-cli --workspace=/home/runner/ComfyUI --skip-prompt node install ComfyUI-Crystools
 
 while true; do
-    comfy-cli --workspace=/home/runner/ComfyUI launch -- --listen 0.0.0.0
-    echo "entrypoint> ComfyUI terminated with exit code $?. Respawning.."
-    sleep 10
+    comfy-cli --workspace=./ComfyUI --skip-prompt launch -- --listen 0.0.0.0 --port 8188 ${CLI_ARGS}
+    echo "entrypoint> ComfyUI terminated with exit code $?. Respawning..."
+    sleep 15
 done

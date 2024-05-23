@@ -99,7 +99,7 @@ services:
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
-      - CLI_ARGS=--enable-cors-header=http://heartai.cn
+      - CLI_ARGS=--enable-cors-header=https://heartai.cn
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
