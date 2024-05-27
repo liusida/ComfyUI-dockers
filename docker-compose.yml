@@ -6,6 +6,7 @@ services:
     volumes:
       - ./comfy-1:/home/runner
       - ./comfy-public:/comfy-public
+      - /mnt/ramdisk:/ramdisk
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
@@ -24,6 +25,7 @@ services:
     volumes:
       - ./comfy-2:/home/runner
       - ./comfy-public:/comfy-public
+      - /mnt/ramdisk:/ramdisk
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
@@ -42,6 +44,7 @@ services:
     volumes:
       - ./comfy-3:/home/runner
       - ./comfy-public:/comfy-public
+      - /mnt/ramdisk:/ramdisk
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
@@ -60,6 +63,7 @@ services:
     volumes:
       - ./comfy-4:/home/runner
       - ./comfy-public:/comfy-public
+      - /mnt/ramdisk:/ramdisk
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
@@ -78,6 +82,7 @@ services:
     volumes:
       - ./comfy-5:/home/runner
       - ./comfy-public:/comfy-public
+      - /mnt/ramdisk:/ramdisk
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
@@ -96,6 +101,7 @@ services:
     volumes:
       - ./comfy-9:/home/runner
       - ./comfy-public:/comfy-public
+      - /mnt/ramdisk:/ramdisk
     environment:
       - http_proxy=http://host.docker.internal:17890
       - https_proxy=http://host.docker.internal:17890
