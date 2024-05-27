@@ -21,6 +21,10 @@ if [ ! -d "ComfyUI" ]; then
     comfy-cli --workspace=./ComfyUI --skip-prompt node install ComfyUI-Crystools
 fi
 
+# Copy extra_model_paths.yaml over
+cp "/home/scripts/extra_model_paths.yaml" "/home/runner/ComfyUI/"
+
+
 while true; do
     comfy-cli --workspace=./ComfyUI --skip-prompt launch -- --listen 0.0.0.0 --port 8188 ${CLI_ARGS}
     echo "entrypoint> ComfyUI terminated with exit code $?. Respawning..."
