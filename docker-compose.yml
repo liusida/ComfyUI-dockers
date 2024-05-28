@@ -8,8 +8,9 @@ services:
       - ./comfy-public:/comfy-public
       - /mnt/ramdisk:/ramdisk
     environment:
-      - http_proxy=http://host.docker.internal:17890
-      - https_proxy=http://host.docker.internal:17890
+      - HTTP_PROXY=http://host.docker.internal:17890
+      - HTTPS_PROXY=http://host.docker.internal:17890
+      - HF_ENDPOINT=https://hf-mirror.com/
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -27,8 +28,9 @@ services:
       - ./comfy-public:/comfy-public
       - /mnt/ramdisk:/ramdisk
     environment:
-      - http_proxy=http://host.docker.internal:17890
-      - https_proxy=http://host.docker.internal:17890
+      - HTTP_PROXY=http://host.docker.internal:17890
+      - HTTPS_PROXY=http://host.docker.internal:17890
+      - HF_ENDPOINT=https://hf-mirror.com/
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -46,8 +48,9 @@ services:
       - ./comfy-public:/comfy-public
       - /mnt/ramdisk:/ramdisk
     environment:
-      - http_proxy=http://host.docker.internal:17890
-      - https_proxy=http://host.docker.internal:17890
+      - HTTP_PROXY=http://host.docker.internal:17890
+      - HTTPS_PROXY=http://host.docker.internal:17890
+      - HF_ENDPOINT=https://hf-mirror.com/
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -65,8 +68,9 @@ services:
       - ./comfy-public:/comfy-public
       - /mnt/ramdisk:/ramdisk
     environment:
-      - http_proxy=http://host.docker.internal:17890
-      - https_proxy=http://host.docker.internal:17890
+      - HTTP_PROXY=http://host.docker.internal:17890
+      - HTTPS_PROXY=http://host.docker.internal:17890
+      - HF_ENDPOINT=https://hf-mirror.com/
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -84,8 +88,9 @@ services:
       - ./comfy-public:/comfy-public
       - /mnt/ramdisk:/ramdisk
     environment:
-      - http_proxy=http://host.docker.internal:17890
-      - https_proxy=http://host.docker.internal:17890
+      - HTTP_PROXY=http://host.docker.internal:17890
+      - HTTPS_PROXY=http://host.docker.internal:17890
+      - HF_ENDPOINT=https://hf-mirror.com/
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -103,8 +108,9 @@ services:
       - ./comfy-public:/comfy-public
       - /mnt/ramdisk:/ramdisk
     environment:
-      - http_proxy=http://host.docker.internal:17890
-      - https_proxy=http://host.docker.internal:17890
+      - HTTP_PROXY=http://host.docker.internal:17890
+      - HTTPS_PROXY=http://host.docker.internal:17890
+      - HF_ENDPOINT=https://hf-mirror.com/
       - CLI_ARGS=--enable-cors-header=https://heartai.cn
     extra_hosts:
       - "host.docker.internal:host-gateway"
