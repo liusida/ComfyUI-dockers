@@ -4,6 +4,7 @@ comfy-*/ComfyUI/
 comfy-*/*.log
 comfy-*/.*
 comfy-public/models/
+pip-cache/
 auth_data/
 auth_data/*
 

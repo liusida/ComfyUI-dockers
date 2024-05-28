@@ -6,10 +6,12 @@ services:
     volumes:
       - ./comfy-1:/home/runner
       - ./comfy-public:/comfy-public
+      - ./pip-cache:/pip-cache
     environment:
       - HTTP_PROXY=http://host.docker.internal:17890
       - HTTPS_PROXY=http://host.docker.internal:17890
       - HF_ENDPOINT=https://hf-mirror.com/
+      - PIP_CACHE_DIR=/pip-cache
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -25,10 +27,12 @@ services:
     volumes:
       - ./comfy-2:/home/runner
       - ./comfy-public:/comfy-public
+      - ./pip-cache:/pip-cache
     environment:
       - HTTP_PROXY=http://host.docker.internal:17890
       - HTTPS_PROXY=http://host.docker.internal:17890
       - HF_ENDPOINT=https://hf-mirror.com/
+      - PIP_CACHE_DIR=/pip-cache
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -44,10 +48,12 @@ services:
     volumes:
       - ./comfy-3:/home/runner
       - ./comfy-public:/comfy-public
+      - ./pip-cache:/pip-cache
     environment:
       - HTTP_PROXY=http://host.docker.internal:17890
       - HTTPS_PROXY=http://host.docker.internal:17890
       - HF_ENDPOINT=https://hf-mirror.com/
+      - PIP_CACHE_DIR=/pip-cache
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -63,6 +69,7 @@ services:
     volumes:
       - ./comfy-4:/home/runner
       - ./comfy-public:/comfy-public
+      - ./pip-cache:/pip-cache
     environment:
       - HTTP_PROXY=http://host.docker.internal:17890
       - HTTPS_PROXY=http://host.docker.internal:17890
@@ -82,10 +89,12 @@ services:
     volumes:
       - ./comfy-5:/home/runner
       - ./comfy-public:/comfy-public
+      - ./pip-cache:/pip-cache
     environment:
       - HTTP_PROXY=http://host.docker.internal:17890
       - HTTPS_PROXY=http://host.docker.internal:17890
       - HF_ENDPOINT=https://hf-mirror.com/
+      - PIP_CACHE_DIR=/pip-cache
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
@@ -101,11 +110,13 @@ services:
     volumes:
       - ./comfy-9:/home/runner
       - ./comfy-public:/comfy-public
+      - ./pip-cache:/pip-cache
     environment:
       - HTTP_PROXY=http://host.docker.internal:17890
       - HTTPS_PROXY=http://host.docker.internal:17890
       - HF_ENDPOINT=https://hf-mirror.com/
       - CLI_ARGS=--enable-cors-header=https://heartai.cn
+      - PIP_CACHE_DIR=/pip-cache
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
