@@ -3,6 +3,7 @@ comfy-*/huggingface/
 comfy-*/ComfyUI/
 comfy-*/*.log
 comfy-*/.*
+comfy-public/models/
 auth_data/
 auth_data/*
 
