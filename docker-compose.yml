@@ -95,6 +95,7 @@ services:
       - HTTPS_PROXY=http://host.docker.internal:17890
       - HF_ENDPOINT=https://hf-mirror.com/
       - PIP_CACHE_DIR=/pip-cache
+      - VSCODE_DEBUG=true
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
