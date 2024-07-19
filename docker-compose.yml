@@ -1,6 +1,6 @@
 services:
   comfy-1:
-    image: sidaliu/comfyui:comfy-cli
+    image: sidaliu/comfyui:latest
     ports:
       - "56781:8188"
     volumes:
@@ -21,7 +21,7 @@ services:
             - capabilities: ["gpu"]
 
   comfy-2:
-    image: sidaliu/comfyui:comfy-cli
+    image: sidaliu/comfyui:latest
     ports:
       - "56782:8188"
     volumes:
@@ -42,7 +42,7 @@ services:
             - capabilities: ["gpu"]
 
   comfy-3:
-    image: sidaliu/comfyui:comfy-cli
+    image: sidaliu/comfyui:latest
     ports:
       - "56783:8188"
     volumes:
@@ -63,7 +63,7 @@ services:
             - capabilities: ["gpu"]
 
   comfy-4:
-    image: sidaliu/comfyui:comfy-cli
+    image: sidaliu/comfyui:latest
     ports:
       - "56784:8188"
     volumes:
@@ -83,7 +83,7 @@ services:
             - capabilities: ["gpu"]
 
   comfy-5:
-    image: sidaliu/comfyui:comfy-cli
+    image: sidaliu/comfyui:latest
     ports:
       - "56785:8188"
     volumes:
@@ -105,7 +105,7 @@ services:
             - capabilities: ["gpu"]
 
   comfy-9:
-    image: sidaliu/comfyui:comfy-cli
+    image: sidaliu/comfyui:latest
     ports:
       - "56789:8188"
     volumes:
